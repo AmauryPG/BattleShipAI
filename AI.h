@@ -1,6 +1,7 @@
-class AI{
+#pragma once
+class AI {
 
-public : 
+public:
 	AI();
 	virtual ~AI();
 

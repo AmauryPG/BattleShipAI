@@ -1,34 +1,26 @@
 #include <iostream>
 using namespace std;
 
-#include "affichage.h"
+#include "affichage.h"  
 #include "simpleAI.h"
-#include "mediumAI.h"
+#include "moyenAI.h"
 #include "AI.h"
 
-int main(void){
-	Affichage affi;	
-	simpleAI simple;
-	mediumAI medium;
-
-	AI* ordi;
-
-	ordi = &simple;
-
+int main(void) {
 	int tableau[10][10];
 
-	affi.populerTerrainZero(tableau);
+	Affichage affi;  
+	moyenAI ai;
 
-	ordi->placement(tableau);
+	ai.placement(tableau);
+	affi.afficherTerrain(tableau);
 
-	affi.afficherTerrain(tableau);	
-	
 	cout << "---- AI move ----" << endl;
-	for(int tour = 1; tour <= 10; tour++){
-		cout << "---- Tour : " << tour << " ----" << endl;		
+	for (int tour = 1; tour <= 10; tour++) {
+		cout << "---- Tour : " << tour << " ----" << endl;
+		 
+		ai.move(tableau);
 
-		ordi->move(tableau);	
-		
 		affi.afficherTerrain(tableau);
 	}
 	return 0;

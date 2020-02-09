@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
@@ -5,13 +6,15 @@ using namespace std;
 #include <stdlib.h>
 #include <time.h>
 
-#include "AI.h"
+class simpleAI {
+private:
+	void setTableauVide(int tableau[10][10]);
 
-class simpleAI : public AI{
 public:
 	simpleAI();
 	~simpleAI();
 
 	void move(int tableau[10][10]);
-	void placement(int tableau[10][10]); 
+	void placement(int tableau[10][10]);
+
 };

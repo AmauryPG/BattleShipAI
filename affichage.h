@@ -1,10 +1,11 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
-class Affichage{
+class Affichage {
 private:
 	void terrainNull();
-public: 
+public:
 	Affichage();
 	~Affichage();
 

@@ -1,25 +1,40 @@
 #include "simpleAI.h"
 
-simpleAI::simpleAI(){
-	cout << "Creation de simpleAI" << endl;
+simpleAI::simpleAI()
+{
+	cout << "Constructeur simpleAI" << endl;
 }
 
-simpleAI::~simpleAI(){
-	cout << "Destruction de simpleAI" << endl;
+simpleAI::~simpleAI()
+{
+	cout << "Destructeur simpleAI" << endl;
 }
 
-void simpleAI::move(int tableau[10][10]){	
+void simpleAI::setTableauVide(int tableau[10][10])
+{
+	for (int x = 0; x < 10; x++)
+	{
+		for (int y = 0; y < 10; y++)
+		{
+			tableau[x][y] = 0;
+		}
+	}
+}
+
+void simpleAI::move(int tableau[10][10]) {
 	int x = rand() % 10;
 	int y = rand() % 10;
 
-	if(tableau[x][y] == 0 || tableau[x][y] == 3){
+	if (tableau[x][y] == 0 || tableau[x][y] == 3) {
 		tableau[x][y] = 3;
-	}else if(tableau[x][y] == 1){
+	}
+	else if (tableau[x][y] == 1) {
 		tableau[x][y] = 2;
-	}else {
+	}
+	else {
 		//en cas que la case n'est pas disponible
 		move(tableau);
-	}	
+	}
 }
 
 void simpleAI::placement(int tableau[10][10]) {
@@ -35,11 +50,11 @@ void simpleAI::placement(int tableau[10][10]) {
 		x = rand() % 10;
 		y = rand() % 10;
 
-		if(tableau[x][y] == 0)
+		if (tableau[x][y] == 0)
 		{
 			tableau[x][y] = 1;
 		}
-		else 
+		else
 		{
 			do {
 				x = rand() % 10;
