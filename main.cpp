@@ -7,10 +7,13 @@ using namespace std;
 
 int main(void){
 	Affichage affi;	
-	mediumAI ai;
+	simpleAI ai;
 	int tableau[10][10];
 
-	affi.populerTerrainAI(tableau);
+	affi.populerTerrainZero(tableau);
+
+	ai.placement(tableau);
+
 	affi.afficherTerrain(tableau);	
 	
 	cout << "---- AI move ----" << endl;

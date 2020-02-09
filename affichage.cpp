@@ -12,54 +12,13 @@ Affichage::~Affichage(){
 	cout << "Destruction d'affichage" << endl;
 }
 
-void Affichage::populerTerrainAI(int ptr[10][10]){
+void Affichage::populerTerrainZero(int ptr[10][10]){
 	srand(time(NULL));
 	
 	for(int k = 0; k < 10; k++){
 		for(int j = 0; j < 10; j++){
 			ptr[k][j] = 0;
 		}
-	}
-
-	int x, y;
-	bool loop = true;
-
-	for(int i = 0;i < 2; i++){	
-		x = rand()%10;
-		y = rand()%10;
-
-		ptr[x][y] = 1;
-		//dans le vrai code il faut utiliser les classes 
-		//mais dans cette petite simulation on va l'ignorer
-
-		do{
-			switch(rand()%4){
-				case 0:
-					if((x+1) < 10 && ptr[x+1][y] != 1 && ptr[x+1][y] != 1){
-						ptr[x+1][y] = 1;
-						loop = false;
-					}
-				break;
-				case 1:
-					if((x-1) >= 0 && ptr[x-1][y] != 1 && ptr[x-1][y] != 1){
-						ptr[x-1][y] = 1;
-						loop = false;
-					}
-				break;
-				case 2:				
-					if((y+1) < 10 && ptr[x][y+1] != 1 && ptr[x][y+1] != 1){
-						ptr[x][y+1] = 1;
-						loop = false;
-					}
-				break;
-				case 3:				
-					if((y-1) >= 0 && ptr[x][y-1] != 1 && ptr[x][y-1] != 1){
-						ptr[x][y-1] = 1;
-						loop = false;
-					}
-				break;
-			}		
-		}while(loop);
 	}
 }
 

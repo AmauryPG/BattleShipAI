@@ -4,9 +4,10 @@
 
 mediumAI::mediumAI(){
 	cout << "Creation de medimAI" << endl;
-	m_navire = false;
-	m_directionTrouve = false;
+	m_navire = false; 
 	m_direction = 0;
+	m_positionX = 0;
+	m_positionY = 0;
 }
 
 mediumAI::~mediumAI(){
@@ -90,4 +91,9 @@ void mediumAI::move(int tableau[10][10]){
 			}
 		}
 	}	
+}
+
+void mediumAI::placement(int tableau[10][10])
+{
+
 }
