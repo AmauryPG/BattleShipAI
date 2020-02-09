@@ -23,6 +23,9 @@ void simpleAI::move(int tableau[10][10]){
 }
 
 void simpleAI::placement(int tableau[10][10]) {
+
+	setTableauVide(tableau);
+
 	srand(time(NULL));
 
 	int x, y;

@@ -5,16 +5,9 @@ using namespace std;
 #include <stdlib.h>
 #include <time.h>
 
-class mediumAI{
-private:
-	bool m_navire;
-	/*
-		0
-	  3 X 1
-		2
-	*/
-	int m_direction; 
-	int m_positionX, m_positionY;
+#include "AI.h"
+
+class mediumAI : public AI{
 public:
 	mediumAI();
 	~mediumAI();

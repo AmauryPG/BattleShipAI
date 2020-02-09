@@ -3,11 +3,7 @@
 #include <cmath>
 
 mediumAI::mediumAI(){
-	cout << "Creation de medimAI" << endl;
-	m_navire = false; 
-	m_direction = 0;
-	m_positionX = 0;
-	m_positionY = 0;
+	cout << "Creation de medimAI" << endl; 
 }
 
 mediumAI::~mediumAI(){
@@ -15,8 +11,18 @@ mediumAI::~mediumAI(){
 }
 
 void mediumAI::move(int tableau[10][10]){
+	bool navire = false;
+	/*
+		0
+	  3 X 1
+		2
+	*/
+	int direction = 0;
+	int positionX = 0;
+	int positionY = 0;
+
 	//cherche un point bateau
-	if(!m_navire){
+	if(!navire){
 		cout << "Recherche du bateau" << endl;
 
 		int x = rand() % 10;
@@ -42,10 +48,10 @@ void mediumAI::move(int tableau[10][10]){
 		cout << x << " : " << y << endl;
 
 		if(tableau[x][y] == 1){
-			m_navire = true;
+			navire = true;
 			
-			m_positionX = x;
-			m_positionY = y;
+			positionX = x;
+			positionY = y;
 
 			tableau[x][y] = 2; 
 		}else if(tableau[x][y] == 0 || tableau[x][y] == 3){
@@ -55,39 +61,39 @@ void mediumAI::move(int tableau[10][10]){
 		//quand on trouve un point 
 		cout << "Chasse du bateau" << endl;	
 
-		if(m_direction == 0 && (m_positionY - 1) >= 0
-			&& tableau[m_positionX][m_positionY - 1] == 1){
+		if(direction == 0 && (positionY - 1) >= 0
+			&& tableau[positionX][positionY - 1] == 1){
 			
-			m_positionY--;
-			tableau[m_positionX][m_positionY] = 2;
-			m_navire = false;
+			positionY--;
+			tableau[positionX][positionY] = 2;
+			navire = false;
 
-		}else if(m_direction == 1 && (m_positionX + 1) < 10
-			&& tableau[m_positionX + 1][m_positionY] == 1){
+		}else if(direction == 1 && (positionX + 1) < 10
+			&& tableau[positionX + 1][positionY] == 1){
 			
-			m_positionX++;
-			tableau[m_positionX][m_positionY] = 2;
-			m_navire = false;
+			positionX++;
+			tableau[positionX][positionY] = 2;
+			navire = false;
 
-		}else if(m_direction == 2 && (m_positionY + 1) < 10
-			&& tableau[m_positionX][m_positionY + 1] == 1){
+		}else if(direction == 2 && (positionY + 1) < 10
+			&& tableau[positionX][positionY + 1] == 1){
 
-			m_positionY++;
-			tableau[m_positionX][m_positionY] = 2;
-			m_navire = false;
+			positionY++;
+			tableau[positionX][positionY] = 2;
+			navire = false;
 
-		}else if(m_direction == 2 && (m_positionX - 1) >= 0
-			&& tableau[m_positionX - 1][m_positionY] == 1){
+		}else if(direction == 2 && (positionX - 1) >= 0
+			&& tableau[positionX - 1][positionY] == 1){
 			
-			m_positionX--;
-			tableau[m_positionX][m_positionY] = 2;
-			m_navire = false;
+			positionX--;
+			tableau[positionX][positionY] = 2;
+			navire = false;
 		}else{
 		//changer de direction de la recherche
-			if((m_direction + 1) == 4){
-				m_direction = 0;
+			if((direction + 1) == 4){
+				direction = 0;
 			}else{
-				m_direction++;
+				direction++;
 			}
 		}
 	}	
@@ -95,6 +101,8 @@ void mediumAI::move(int tableau[10][10]){
 
 void mediumAI::placement(int tableau[10][10])
 {
+	setTableauVide(tableau);
+
 	srand(time(NULL));
 
 	int x = rand() % 10;

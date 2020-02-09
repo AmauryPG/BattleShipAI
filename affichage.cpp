@@ -12,16 +12,6 @@ Affichage::~Affichage(){
 	cout << "Destruction d'affichage" << endl;
 }
 
-void Affichage::populerTerrainZero(int ptr[10][10]){
-	srand(time(NULL));
-	
-	for(int k = 0; k < 10; k++){
-		for(int j = 0; j < 10; j++){
-			ptr[k][j] = 0;
-		}
-	}
-}
-
 void Affichage::afficherTerrain(int ptr[10][10]){
 	for(int x = 0; x < 10; x++){
 		for(int y = 0; y < 10; y++){
