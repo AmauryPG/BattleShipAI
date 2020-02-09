@@ -6,10 +6,9 @@ using namespace std;
 #include <stdlib.h>
 #include <time.h>
 
-class moyenAI  {
-private:
-	void setTableauVide(int tableau[10][10]);
+#include "AI.h"
 
+class moyenAI : public AI { 
 public:
 	moyenAI();
 	~moyenAI();

@@ -8,18 +8,7 @@ moyenAI::moyenAI() {
 
 moyenAI::~moyenAI() {
 	cout << "Destruction de moyenAI" << endl;
-}
-
-void moyenAI::setTableauVide(int tableau[10][10])
-{
-	for (int x = 0; x < 10; x++)
-	{
-		for (int y = 0; y < 10; y++)
-		{
-			tableau[x][y] = 0;
-		}
-	}
-}
+} 
 
 void moyenAI::move(int tableau[10][10]) {
 	bool navire = false;
