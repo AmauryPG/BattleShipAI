@@ -144,6 +144,8 @@ void mediumAI::placement(int tableau[10][10])
 			break;
 		}
 	} while (loop);
+	
+	////////////////////////////////////placement strategique////////////////////////////////////
 
 
 }
