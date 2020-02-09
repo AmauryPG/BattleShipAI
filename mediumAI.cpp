@@ -95,5 +95,55 @@ void mediumAI::move(int tableau[10][10]){
 
 void mediumAI::placement(int tableau[10][10])
 {
+	srand(time(NULL));
+
+	int x = rand() % 10;
+	int y = rand() % 10;
+	bool loop = false;
+
+	if (tableau[x][y] == 0)
+	{
+		tableau[x][y] = 1;
+	}
+	else
+	{
+		do {
+			x = rand() % 10;
+			y = rand() % 10;
+		} while (tableau[x][y] != 0);
+	}
+
+	//dans le vrai code il faut utiliser les classes 
+	//mais dans cette petite simulation on va l'ignorer
+
+	do {
+		switch (rand() % 4) {
+		case 0:
+			if ((x + 1) < 10 && tableau[x + 1][y] != 1 && tableau[x + 1][y] == 0) {
+				tableau[x + 1][y] = 1;
+				loop = false;
+			}
+			break;
+		case 1:
+			if ((x - 1) >= 0 && tableau[x - 1][y] != 1 && tableau[x - 1][y] == 0) {
+				tableau[x - 1][y] = 1;
+				loop = false;
+			}
+			break;
+		case 2:
+			if ((y + 1) < 10 && tableau[x][y + 1] != 1 && tableau[x][y + 1] == 0) {
+				tableau[x][y + 1] = 1;
+				loop = false;
+			}
+			break;
+		case 3:
+			if ((y - 1) >= 0 && tableau[x][y - 1] != 1 && tableau[x][y - 1] == 0) {
+				tableau[x][y - 1] = 1;
+				loop = false;
+			}
+			break;
+		}
+	} while (loop);
+
 
 }
