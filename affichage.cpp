@@ -32,5 +32,4 @@ void Affichage::afficherTerrain(int ptr[10][10]) {
 		}
 		cout << endl;
 	}
-
 }

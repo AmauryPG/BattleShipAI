@@ -1,6 +1,21 @@
 #include <iostream>
 using namespace std;
 
+#include "avancerAI.h"
+
+int main()
+{
+	int tableau[3][3];
+	avancerAI ai;
+
+	ai.affichagePetitTableau(tableau);
+
+	ai.RechercheExhaustif(tableau, 2);
+
+	return 0;
+}
+
+/*
 #include "affichage.h"  
 #include "simpleAI.h"
 #include "moyenAI.h"
@@ -25,3 +40,4 @@ int main(void) {
 	}
 	return 0;
 }
+*/

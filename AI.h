@@ -15,8 +15,7 @@ public:
 	{
 		cout << "placement de AI" << endl;
 	}
-
-
+	
 	void setTableauVide(int tableau[10][10])
 	{
 		for (int x = 0; x < 10; x++)
