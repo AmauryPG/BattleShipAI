@@ -5,10 +5,11 @@ using namespace std;
 
 int main()
 {
-	int tableau[3][3];
+	int tableau[10][10];
 	avancerAI ai;
 
-	ai.affichagePetitTableau(tableau);
+	ai.affichageTableau(tableau);
+	cout << "--------------------------" << endl;
 
 	ai.RechercheExhaustif(tableau, 2);
 

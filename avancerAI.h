@@ -4,25 +4,27 @@ using namespace std;
 
 class avancerAI {
 private:
-	int m_distribution[3][3];
+	int m_distribution[10][10];
 
-	void setTableauVide(int tableau[3][3])
+	void setTableauVide(int tableau[10][10])
 	{
-		for (int x = 0; x < 3; x++)
+		for (int x = 0; x < 10; x++)
 		{
-			for (int y = 0; y < 3; y++)
+			for (int y = 0; y < 10; y++)
 			{
 				tableau[x][y] = 0;
 			}
 		}
 	}
 
+	void afficherDistribution();
+
 public:
-	avancerAI() {};
+	avancerAI();
 
-	~avancerAI() {};
+	~avancerAI();
 
-	void affichagePetitTableau(int tableau[3][3]);
+	void affichageTableau(int tableau[10][10]);
 
-	void RechercheExhaustif(int tableau[3][3], int longueur);
+	void RechercheExhaustif(int tableau[10][10], int longueur);
 };
