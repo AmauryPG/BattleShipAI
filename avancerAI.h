@@ -26,5 +26,6 @@ public:
 
 	void affichageTableau(int tableau[10][10]);
 
-	void RechercheExhaustif(int tableau[10][10], int longueur);
+	bool RechercheExhaustif(int tableau[10][10], int longueur);
+	bool PriorisationZoneTouche(int tableau[10][10]);
 };

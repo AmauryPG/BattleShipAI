@@ -8,10 +8,18 @@ int main()
 	int tableau[10][10];
 	avancerAI ai;
 
+	for (int x = 0; x < 10; x++) {
+		for (int y = 0; y < 10; y++) {
+			tableau[x][y] = 0; 
+		} 
+	}
+
+	tableau[4][4] = 2;
+
 	ai.affichageTableau(tableau);
 	cout << "--------------------------" << endl;
 
-	ai.RechercheExhaustif(tableau, 2);
+	ai.RechercheExhaustif(tableau, 2); 
 
 	return 0;
 }
