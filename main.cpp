@@ -14,12 +14,19 @@ int main()
 		} 
 	}
 
-	tableau[4][4] = 2;
+	tableau[4][2] = -3;
+	tableau[4][3] = -3;
+	tableau[4][4] = -3; 
+
+	tableau[2][2] = -3;
+	tableau[3][2] = -3;
+	tableau[1][2] = -3;
 
 	ai.affichageTableau(tableau);
 	cout << "--------------------------" << endl;
 
-	ai.RechercheExhaustif(tableau, 2); 
+	ai.PreAnalyse(tableau);
+	ai.RechercheExhaustif(2); 
 
 	return 0;
 }

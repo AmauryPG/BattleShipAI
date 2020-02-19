@@ -5,6 +5,7 @@ using namespace std;
 class avancerAI {
 private:
 	int m_distribution[10][10];
+	int m_enemie[10][10];
 
 	void setTableauVide(int tableau[10][10])
 	{
@@ -18,6 +19,11 @@ private:
 	}
 
 	void afficherDistribution();
+	bool PriorisationZoneTouche();
+	bool AnalyseDirection();
+	bool RechercheExhaustif(int longueur);
+
+	void chercherMeilleurCase(int& x, int& y);
 
 public:
 	avancerAI();
@@ -26,6 +32,5 @@ public:
 
 	void affichageTableau(int tableau[10][10]);
 
-	bool RechercheExhaustif(int tableau[10][10], int longueur);
-	bool PriorisationZoneTouche(int tableau[10][10]);
+	void PreAnalyse(const int tableau[10][10]);
 };
