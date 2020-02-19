@@ -33,4 +33,7 @@ public:
 	void affichageTableau(int tableau[10][10]);
 
 	void PreAnalyse(const int tableau[10][10]);
+
+	void trier();
+	void placer();
 };

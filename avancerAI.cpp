@@ -251,4 +251,11 @@ bool avancerAI::RechercheExhaustif(int longueur)
 	return bateau;
 }
 
-void avancerAI::tir
+void avancerAI::trier()
+{
+	int x, y;
+
+	RechercheExhaustif(2);
+	chercherMeilleurCase(x, y);
+	cout << x << " : " << y << endl;
+}
