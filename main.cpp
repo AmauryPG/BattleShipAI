@@ -25,8 +25,7 @@ int main()
 	ai.affichageTableau(tableau);
 	cout << "--------------------------" << endl;
 
-	ai.PreAnalyse(tableau);
-	ai.RechercheExhaustif(2); 
+	ai.PreAnalyse(tableau); 
 
 	return 0;
 }
